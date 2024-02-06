@@ -45,7 +45,7 @@ class HomeComponentState extends State<HomeComponent> {
               "Copied to clipboard!",
               style: TextStyle(
                 fontSize: 14.0,
-                color: const Color(0xFFFFFFFF),
+                color: Color.fromARGB(255, 242, 255, 238),
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -88,6 +88,7 @@ class HomeComponentState extends State<HomeComponent> {
       ],
     );
   }
+
 
   @override
   Widget build(BuildContext context) {
