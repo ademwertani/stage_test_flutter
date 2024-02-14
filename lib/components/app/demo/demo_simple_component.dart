@@ -30,11 +30,6 @@ class DemoSimpleComponent extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image(
-            image: AssetImage("assets/images/acc_boom.png"),
-            color: ColorHelpers.blackOrWhiteContrastColor(color),
-            width: 260.0,
-          ),
           Padding(
             padding: EdgeInsets.only(left: 50.0, right: 50.0, top: 15.0),
             child: Text(
