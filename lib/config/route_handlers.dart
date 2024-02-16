@@ -15,7 +15,7 @@ import 'package:flutter/material.dart';
 
 var rootHandler = Handler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
-  return HomeComponent();
+  return const HomeComponent();
 });
 
 var demoRouteHandler = Handler(
@@ -23,8 +23,8 @@ var demoRouteHandler = Handler(
   String? message = params["message"]?.first;
   String? colorHex = params["color_hex"]?.first;
   String? result = params["result"]?.first;
-  Color color = Color(0xFFFFFFFF);
-  if (colorHex != null && colorHex.length > 0) {
+  Color color = const Color(0xFFFFFFFF);
+  if (colorHex != null && colorHex.isNotEmpty) {
     color = Color(ColorHelpers.fromHexString(colorHex));
   }
   return DemoSimpleComponent(
@@ -39,10 +39,10 @@ var demoFunctionHandler = Handler(
         context: context!,
         builder: (context) {
           return AlertDialog(
-            title: Text(
+            title: const Text(
               "Hey Hey!",
               style: TextStyle(
-                color: const Color(0xFF00D6F7),
+                color: Color(0xFF00D6F7),
                 fontFamily: "Lazer84",
                 fontSize: 22.0,
               ),
@@ -50,12 +50,12 @@ var demoFunctionHandler = Handler(
             content: Text("$message"),
             actions: <Widget>[
               Padding(
-                padding: EdgeInsets.only(bottom: 8.0, right: 8.0),
+                padding: const EdgeInsets.only(bottom: 8.0, right: 8.0),
                 child: TextButton(
                   onPressed: () {
                     Navigator.of(context).pop(true);
                   },
-                  child: Text("OK"),
+                  child: const Text("OK"),
                 ),
               ),
             ],
@@ -73,8 +73,8 @@ var deepLinkHandler = Handler(
     handlerFunc: (BuildContext? context, Map<String, List<String>> params) {
   String? colorHex = params["color_hex"]?.first;
   String? result = params["result"]?.first;
-  Color color = Color(0xFFFFFFFF);
-  if (colorHex != null && colorHex.length > 0) {
+  Color color = const Color(0xFFFFFFFF);
+  if (colorHex != null && colorHex.isNotEmpty) {
     color = Color(ColorHelpers.fromHexString(colorHex));
   }
   return DemoSimpleComponent(

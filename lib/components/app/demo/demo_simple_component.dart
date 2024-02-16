@@ -11,13 +11,13 @@ import 'package:flutter/material.dart';
 import 'package:fluro/fluro.dart';
 
 class DemoSimpleComponent extends StatelessWidget {
-  DemoSimpleComponent(
-      {String message = "Testing",
+  const DemoSimpleComponent(
+      {super.key, String message = "Testing",
       Color color = const Color(0xFFFFFFFF),
       String? result})
-      : this.message = message,
-        this.color = color,
-        this.result = result;
+      : message = message,
+        color = color,
+        result = result;
 
   final String message;
   final Color color;
@@ -31,7 +31,7 @@ class DemoSimpleComponent extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding: EdgeInsets.only(left: 50.0, right: 50.0, top: 15.0),
+            padding: const EdgeInsets.only(left: 50.0, right: 50.0, top: 15.0),
             child: Text(
               message,
               textAlign: TextAlign.center,
@@ -42,9 +42,9 @@ class DemoSimpleComponent extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 15.0),
+            padding: const EdgeInsets.only(top: 15.0),
             child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: 42.0),
+              constraints: const BoxConstraints(minHeight: 42.0),
               child: TextButton(
                 onPressed: () {
                   if (result == null) {

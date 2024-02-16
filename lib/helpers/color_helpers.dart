@@ -21,16 +21,16 @@ class ColorHelpers {
       useString = useString.substring(1); // trim the starting '#'
     }
     if (useString.length < 8) {
-      useString = "FF" + useString;
+      useString = "FF$useString";
     }
     if (!useString.startsWith("0x")) {
-      useString = "0x" + useString;
+      useString = "0x$useString";
     }
     return int.parse(useString);
   }
 
-  static final double _kMinContrastModifierRange = 0.35;
-  static final double _kMaxContrastModifierRange = 0.65;
+  static const double _kMinContrastModifierRange = 0.35;
+  static const double _kMaxContrastModifierRange = 0.65;
 
   /// Returns black or white depending on whether the source color is darker
   /// or lighter. If darker, will return white. If lighter, will return
@@ -48,10 +48,10 @@ class ColorHelpers {
       if (value >= _kMinContrastModifierRange &&
           value <= _kMaxContrastModifierRange) {
         return prefer == ContrastPreference.light
-            ? Color(0xFFFFFFFF)
-            : Color(0xFF000000);
+            ? const Color(0xFFFFFFFF)
+            : const Color(0xFF000000);
       }
     }
-    return value > 0.6 ? Color(0xFF000000) : Color(0xFFFFFFFF);
+    return value > 0.6 ? const Color(0xFF000000) : const Color(0xFFFFFFFF);
   }
 }
